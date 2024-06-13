@@ -22,7 +22,7 @@
                                 <input type="text" class="mt-2 form-control" v-model="celular" />
                             </div>
                             <div class="col-lg-6">
-                                <label for="nombre">Empresa*</label>
+                                <label for="nombre">Empresa</label>
                                 <input type="text" class="mt-2 form-control" v-model="empresa" />
                             </div>
                         </div>
@@ -154,7 +154,7 @@
                                 <input type="text" class="mt-2 form-control" v-model="celular" />
                             </div>
                             <div class="col-lg-6">
-                                <label for="nombre">Empresa*</label>
+                                <label for="nombre">Empresa</label>
                                 <input type="text" class="mt-2 form-control" v-model="empresa" />
                             </div>
                         </div>
@@ -405,12 +405,12 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
 textarea::placeholder {
     color: rgba(0, 0, 0, 0.50);
-    font-family: 'Inter';
+    font-family: 'Poppins';
     font-size: 16px;
     font-style: normal;
     font-weight: 300;
@@ -420,7 +420,7 @@ textarea::placeholder {
 input {
     height: 48px;
     flex-shrink: 0;
-    border-radius: 4px !important;
+    border-radius: 6px !important;
     border: 1px solid #D9D9D9 !important;
 }
 
@@ -431,7 +431,7 @@ input {
 
 .titleForm {
     color: #000;
-    font-family: 'Inter';
+    font-family: 'Poppins';
     font-size: 18px;
     font-style: normal;
     font-weight: 300;
@@ -441,7 +441,7 @@ input {
 
 .campoO {
     color: #131313;
-    font-family: 'Inter';
+    font-family: 'Poppins';
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -455,7 +455,7 @@ input {
 
 .titulo {
     color: #000;
-    font-family: 'Inter';
+    font-family: 'Poppins';
     font-size: 35px;
     font-style: normal;
     font-weight: 500;
@@ -464,7 +464,7 @@ input {
 
 .informacion {
     font-size: 18px;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Poppins';
     font-weight: 400;
     line-height: 21.94px;
     margin-top: 18px;
@@ -477,7 +477,7 @@ input {
     width: 350px;
 
     color: #000;
-    font-family: 'Inter';
+    font-family: 'Poppins';
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -487,7 +487,7 @@ input {
 .telefono {
     display: flex;
     color: #000;
-    font-family: 'Inter';
+    font-family: 'Poppins';
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -498,7 +498,7 @@ input {
     display: flex;
     font-size: 16px;
     color: #000;
-    font-family: 'Inter';
+    font-family: 'Poppins';
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -518,7 +518,7 @@ input {
 
 .casilla span {
     font-size: 16px;
-    font-family: "Montserrat";
+    font-family: 'Poppins';
     font-weight: 400;
 }
 
@@ -527,7 +527,7 @@ input {
     flex-shrink: 0;
     color: #FFF;
     text-align: center;
-    font-family: "FuturaBook";
+    font-family: 'Poppins';
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -535,6 +535,8 @@ input {
     background: var(--azul, #00245D) !important;
     border-radius: 30px !important;
     text-transform: uppercase;
+    border: none !important;
+
 }
 
 .enviar {
@@ -549,7 +551,7 @@ input {
 
 .textoC {
     color: #131313;
-    font-family: 'Inter';
+    font-family: 'Poppins';
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -606,11 +608,20 @@ input {
 .addArchive {
     color: var(--negro, #000);
     text-align: right;
-    font-family: "FuturaBook";
+    font-family: 'Poppins';
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+label{
+    color: var(--negro, #000);
+font-family: "Poppins";
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
 }
 
 

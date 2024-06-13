@@ -82,21 +82,21 @@
                     <div class="collapse navbar-collapse justify-content-end align-items-end" id="navbarNavAltMarkup">
                         <div class="navbar-nav flex-column">
                             <div class="d-flex justify-content-end align-items-center gap-2">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                        viewBox="0 0 20 20" fill="none" data-bs-toggle="modal"
-                                        data-bs-target="#searchModal" style="cursor: pointer">
-                                        <path
-                                            d="M9.16667 15.8333C12.8486 15.8333 15.8333 12.8486 15.8333 9.16667C15.8333 5.48477 12.8486 2.5 9.16667 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16667C2.5 12.8486 5.48477 15.8333 9.16667 15.8333Z"
-                                            stroke="white" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path d="M17.5001 17.5001L13.9167 13.9167" stroke="white" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <span class="text-white">|</span>
-                                </div>
+                                <!--<div>-->
+                                <!--    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"-->
+                                <!--        viewBox="0 0 20 20" fill="none" data-bs-toggle="modal"-->
+                                <!--        data-bs-target="#searchModal" style="cursor: pointer">-->
+                                <!--        <path-->
+                                <!--            d="M9.16667 15.8333C12.8486 15.8333 15.8333 12.8486 15.8333 9.16667C15.8333 5.48477 12.8486 2.5 9.16667 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16667C2.5 12.8486 5.48477 15.8333 9.16667 15.8333Z"-->
+                                <!--            stroke="white" stroke-width="2" stroke-linecap="round"-->
+                                <!--            stroke-linejoin="round" />-->
+                                <!--        <path d="M17.5001 17.5001L13.9167 13.9167" stroke="white" stroke-width="2"-->
+                                <!--            stroke-linecap="round" stroke-linejoin="round" />-->
+                                <!--    </svg>-->
+                                <!--</div>-->
+                                <!--<div>-->
+                                <!--    <span class="text-white">|</span>-->
+                                <!--</div>-->
                                 <div style="display: flex; align-items: center;">
                                     @if ($idiomaActive == 'ES')
                                         <select class="form-select3 idioma-select" aria-label="Default select example">
@@ -118,8 +118,13 @@
                             </div>
                             <div class="d-flex justify-content-end align-items-center">
                                 @foreach ($opcionesNavegador as $option)
-                                    <a class="nav-link text-white {{ $option['active'] ? 'font-weight-bold' : '' }}"
+                                @if($option['name'] == 'Nosotros')
+                                    <a class="nav-link text-white" style="font-weight: 600"
                                         href="{{ $option['url'] }}">{{ $option['name'] }}</a>
+                                @else
+                                <a class="nav-link text-white"
+                                href="{{ $option['url'] }}">{{ $option['name'] }}</a>
+                                @endif
                                 @endforeach
                                 {{-- @auth
                                 <a class="nav-link text-white" href="{{ route('logout') }}"
@@ -193,21 +198,20 @@
 
 
     <div class="services">
-        <div class="container" style="padding-top: 70px">
+        <div class="container" style="padding-top: 63px">
             @if ($idiomaActive == 'ES')
                 <p class="textoService">Por que elegirnos</p>
             @else
                 <p class="textoService">Porque escolher-nos</p>
             @endif
 
-            <div class="row d-flex flex-wrap" style="padding-top: 30px;padding-bottom: 70px; ">
+            <div class="row d-flex flex-wrap" style="padding-top: 30px; padding-bottom: 70px; ">
                 @foreach ($servicios as $servicio)
                     <div class="justify-content-around col-lg-4">
                         <div class="p-5 tarjeta d-flex flex-column justify-content-center align-items-center"
-                            style="padding-top: 50px">
+                            style="padding-top: 100px !important">
 
                             <div class="contenedorServicioImagenes">
-
                                 <div
                                     style="background-image: url('{{ url('/getImage/' . basename($servicio->imagen)) }}'); 
                                 background-size: containt; 
@@ -223,10 +227,10 @@
 
                             @if ($idiomaActive == 'ES')
                                 <p class="textoIcon" style="padding-top: 10px;">{{ $servicio->titulo }}</p>
-                                <div class="infoIcon">{!! $servicio->texto !!}</div>
+                                <div class="infoIconC">{!! $servicio->texto !!}</div>
                             @else
                                 <p class="textoIcon" style="padding-top: 10px;">{{ $servicio->tituloAlternativo }}</p>
-                                <div class="infoIcon">{!! $servicio->textoAlternativo !!}</div>
+                                <div class="infoIconC">{!! $servicio->textoAlternativo !!}</div>
                             @endif
 
                         </div>
@@ -339,11 +343,11 @@
     });
 </script>
 <style scoped>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
     .indicador {
         color: white;
-        font-family: Montserrat;
+        font-family: 'Poppins';
         font-size: 14px;
         font-style: normal;
         font-weight: 300;
@@ -354,7 +358,7 @@
 
     .indicador b {
         color: white;
-        font-family: Montserrat;
+        font-family: 'Poppins';
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
@@ -370,7 +374,7 @@
 
     .textoService {
         color: var(--azul, #00245D);
-        font-family: "FuturaBook";
+        font-family: 'Poppins';
         font-size: 35px;
         font-style: normal;
         font-weight: 400;
@@ -388,7 +392,7 @@
 
     .tituloSeccion2 {
         color: #131313;
-        font-family: Inter;
+        font-family: 'Poppins';
         font-size: 32px;
         font-style: normal;
         font-weight: 600;
@@ -456,7 +460,7 @@
     }
 
     .nav-link {
-        font-family: 'FuturaBook';
+        font-family: 'Poppins';
         color: #FFF;
         text-align: center;
         font-size: 15px;
@@ -478,7 +482,7 @@
         position: relative;
         z-index: 3;
         color: #FFF;
-        font-family: 'FuturaBook';
+        font-family: 'Poppins';
         font-style: normal;
         font-weight: 700;
         line-height: 130%;
@@ -502,7 +506,7 @@
         background-size: 18px !important;
         color: #FFF;
         text-align: right;
-        font-family: "FuturaBook" !important;
+        font-family: 'Poppins';
         font-size: 18px !important;
         font-style: normal;
         font-weight: 400;
@@ -511,10 +515,10 @@
     }
 
     .form-select3 option {
-        color: #000;
-        background-color: #fff;
+        color: white !important;
+        background-color: #00245D !important;
         text-align: start;
-    }
+        }
 
     .form-select3::after {
         content: '\25BC';
@@ -545,7 +549,7 @@
         background-image: url('{{ asset('svgs/chevron-down.svg') }}') !important;
         color: #FFF;
         text-align: right;
-        font-family: "FuturaBook" !important;
+        font-family: 'Poppins';
         font-size: 18px !important;
         font-style: normal;
         font-weight: 400;
@@ -553,11 +557,11 @@
         background-size: 18px !important;
 
     }
-
     .form-select2 option {
-        color: #000;
-        background-color: #fff;
+        color: white !important;
+        background-color: #00245D !important;
         text-align: start;
+
     }
 
     .form-select2::after {
@@ -634,7 +638,7 @@
 
     .tituloSeccion {
 
-        font-family: "FuturaBook";
+        font-family: 'Poppins';
         color: var(--azul, #00245D);
         font-size: 35px;
         font-style: normal;
@@ -645,10 +649,8 @@
 
     .descripcionSeccion {
         padding-top: 10px;
-
-
         color: #000;
-        font-family: "FuturaBook";
+        font-family: 'Poppins';
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
@@ -670,7 +672,7 @@
     .textoIcon {
         color: var(--azul, #00245D);
         text-align: center;
-        font-family: "FuturaBook";
+        font-family: 'Poppins';
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
@@ -678,16 +680,17 @@
         text-transform: uppercase;
     }
 
-    .infoIcon {
+    .infoIconC {
         color: #0F0F0F;
         text-align: center;
-        font-family: "FuturaBook";
+        font-family: 'Poppins' !important;
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
         line-height: 150%;
-        /* 24px */
         padding-top: 10px;
+        max-height: 120px;
+        margin-bottom: 80px;
     }
 
     .tarjeta {
@@ -706,7 +709,7 @@
 
     .categoriaText {
         color: var(--azul, #00245D);
-        font-family: "FuturaBookMd";
+        font-family: 'Poppins';
         font-size: 14px;
         font-style: normal;
         font-weight: 700;
@@ -716,7 +719,7 @@
 
     .categoriaTextProducto {
         color: var(--azul, #000);
-        font-family: "FuturaBookMd";
+        font-family: 'Poppins';
         font-size: 18px;
         font-style: normal;
         font-weight: 700;
