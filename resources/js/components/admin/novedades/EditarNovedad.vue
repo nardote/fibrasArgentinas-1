@@ -81,7 +81,7 @@
 </template>
 
 <script>
-import 'jquery';
+import './jquery';
 import 'bootstrap';
 import 'summernote';
 import 'summernote/dist/summernote-bs4.css';

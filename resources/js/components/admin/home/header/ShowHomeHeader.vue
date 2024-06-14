@@ -37,7 +37,7 @@
 
 <script>
 import axios from 'axios';
-import 'jquery';
+import './jquery';
 
 import 'summernote';
 import 'summernote/dist/summernote-bs4.css';
