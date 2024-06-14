@@ -49,7 +49,7 @@
 
 <script>
 import axios from 'axios';
-import './jquery';
+import 'jquery';
 export default {
 
     data() {
