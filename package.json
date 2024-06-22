@@ -16,8 +16,6 @@
         "aos": "^2.3.4",
         "bootstrap": "^5.3.3",
         "jquery": "^3.7.1",
-        "jQuery": "^1.7.4",
-        "summernote": "^0.8.20",
         "vue": "^3.4.27",
         "vue-recaptcha-v3": "^2.0.1",
         "vue-router": "^4.3.2",
