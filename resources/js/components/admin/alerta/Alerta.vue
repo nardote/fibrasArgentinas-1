@@ -17,7 +17,7 @@
 </template>
 
 <script>
- 
+import 'jquery';
 import 'bootstrap';
 import AOS from 'aos';
 

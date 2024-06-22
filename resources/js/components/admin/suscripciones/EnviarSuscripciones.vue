@@ -33,7 +33,7 @@
 </template>
 
 <script>
- 
+import 'jquery';
 import 'bootstrap';
 import axios from 'axios';
 export default {
